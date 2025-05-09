@@ -21,6 +21,7 @@
         <nav class="nav">
             <ul>
                 <li><a href="#Inicio">Inicio</a></li>
+                <li><a href="#Proyectos">Proyectos</a></li>
                 <li><a href="#Contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -46,19 +47,63 @@
                 <p>Optimizadas para velocidad y posicionamiento SEO.</p>
             </div>
             <div class="benefit">
-                <h3>Responsive</h3>
-                <p>Tu sitio se ve perfecto en cualquier dispositivo.</p>
+                <h3>Responsivo</h3>
+                <p">Tu sitio se ve perfecto en cualquier dispositivo.</p>
             </div>
         </div>
     </section>
 
-    <section class="testimonios">
-        <h2>Clientes felices</h2>
-        <div class="testimonial">
-            <p>"Thiago entendió mi idea desde el principio. ¡Mi web quedó espectacular!"</p>
-            <span>- Sofía, Emprendedora</span>
+    <section id="Proyectos" class="proyectos">
+        <h2>Mis Proyectos</h2>
+        <div class="proyectos-grid">
+            <div class="proyecto">
+                <img src="assets/img/proyecto1.jpg" alt="Proyecto 1">
+                <h3>Mi Primer Portfolio Web</h3>
+                <p>Diseño limpio, minimalista y responsivo.</p>
+                <button class="btn-vermas" data-modal="modal1">Ver más</button>
+            </div>
+            <div class="proyecto">
+                <img src="assets/img/proyecto2.jpg" alt="Proyecto 2">
+                <h3>Tienda Online</h3>
+                <p>Catálogo moderno con carrito funcional.</p>
+                <button class="btn-vermas" data-modal="modal2">Ver más</button>
+            </div>
+            <div class="proyecto">
+                <img src="assets/img/proyecto3.jpg" alt="Proyecto 3">
+                <h3>Landing para Evento</h3>
+                <p>Diseño responsivo y llamado a la acción claro.</p>
+                <button class="btn-vermas" data-modal="modal3">Ver más</button>
+            </div>
         </div>
     </section>
+
+    <!-- Modales -->
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <h3>Mi Primer Portfolio Web</h3>
+            <p>Proyecto desarrollado con HTML, CSS y JavaScript. Buscaba mostrar una estética moderna con navegación sencilla y visualmente atractiva.</p>
+            <img src="assets/img/proyecto1.jpg" alt="Vista ampliada">
+        </div>
+    </div>
+
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <h3>Tienda Online</h3>
+            <p>Desarrollo de una tienda ficticia con secciones de productos, filtros, carrito y checkout. Totalmente adaptable a móviles.</p>
+            <img src="assets/img/proyecto2.jpg" alt="Vista ampliada">
+        </div>
+    </div>
+
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <h3>Landing para Evento</h3>
+            <p>Landing page informativa para un evento ficticio. Incluye formulario de registro, cuenta regresiva y estructura clara.</p>
+            <img src="assets/img/proyecto3.jpg" alt="Vista ampliada">
+        </div>
+    </div>
 
     <section id="Contacto" class="cta">
         <h2>¿Listo para empezar?</h2>

@@ -1,3 +1,25 @@
+const secciones = document.querySelectorAll("section[id]");
+const enlaces = document.querySelectorAll(".nav a");
+
+window.addEventListener("scroll", () => {
+    let scrollY = window.pageYOffset;
+
+    secciones.forEach(seccion => {
+        const sectionTop = seccion.offsetTop - 100;
+        const sectionHeight = seccion.offsetHeight;
+        const sectionId = seccion.getAttribute("id");
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            enlaces.forEach(link => {
+                link.classList.remove("activo");
+                if (link.getAttribute("href") === `#${sectionId}`) {
+                    link.classList.add("activo");
+                }
+            });
+        }
+    });
+});
+
 document.getElementById("contactForm").addEventListener("submit", async function(e) {
     e.preventDefault();
 
@@ -37,3 +59,28 @@ whatsappBtn.style.marginTop = "1rem";
 whatsappBtn.target = "_blank";
 
 document.querySelector(".cta").appendChild(whatsappBtn);
+
+// Abrir modal
+document.querySelectorAll('.btn-vermas').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const modalId = this.dataset.modal;
+        const modal = document.getElementById(modalId);
+        if (modal) modal.style.display = 'block';
+    });
+});
+
+// Cerrar modal
+document.querySelectorAll('.cerrar').forEach(btn => {
+    btn.addEventListener('click', function () {
+        this.closest('.modal').style.display = 'none';
+    });
+});
+
+// Cerrar al hacer clic fuera del contenido
+window.addEventListener('click', function (e) {
+    document.querySelectorAll('.modal').forEach(modal => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});

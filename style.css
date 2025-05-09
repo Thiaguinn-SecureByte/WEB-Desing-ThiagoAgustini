@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -45,6 +46,20 @@ header {
 
 .nav a:hover {
     color: #0d6efd;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+}
+
+.nav a.activo {
+    color: #0d6efd;
+    border-bottom: 2px solid #0d6efd;
 }
 
 .hero {
@@ -111,28 +126,113 @@ header {
     flex: 1;
 }
 
-.testimonios {
+.proyectos {
     padding: 4rem 2rem;
+    background-color: #fdfdfd;
     text-align: center;
-    background-color: #ffffff;
 }
 
-.testimonios h2 {
+.proyectos h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
 }
 
-.testimonial {
-    max-width: 600px;
-    margin: 0 auto;
-    font-style: italic;
-    color: #555;
+.proyectos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
 }
 
-.testimonial span {
-    display: block;
+.proyecto {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 300px;
+    padding: 1rem;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.proyecto:hover {
+    transform: translateY(-5px);
+}
+
+.proyecto img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    height: 180px;
+}
+
+.proyecto h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.proyecto p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    position: relative;
+    text-align: left;
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: 6px;
     margin-top: 1rem;
+}
+
+.modal-content p {
+    margin-bottom: 5px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #333;
+}
+
+.btn-vermas {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 2px solid #0d6efd;
+    color: #0d6efd;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
     font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-vermas:hover {
+    background-color: #0d6efd;
+    color: #fff;
 }
 
 .cta {
@@ -234,5 +334,9 @@ footer-info h3 {
     }
     .hero h1 {
         font-size: 2rem;
+    }
+    .proyectos-grid {
+        flex-direction: column;
+        align-items: center;
     }
 }
